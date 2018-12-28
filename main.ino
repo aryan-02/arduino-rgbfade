@@ -1,7 +1,7 @@
 #define red 9 // Red pin number (PWM)
 #define blue 10 // Green pin number (PWM)
 #define green 11 // Blue pin number (PWM)
-
+// The PWM pins are tuned for an Arduino Uno. Be sure to use PWM pins only for the target RGB LED.
 const int fadeAmount = 7; // Indicates how fast fading should happen.
 
 void setup() 
@@ -38,13 +38,13 @@ void loop()
 	fade(0, 0, 255, 99, 100, 105);
 }
 
-int rgb (int redC, int greenC, int blueC) {
+void rgb (int redC, int greenC, int blueC) {
 		analogWrite(red, redC);
 		analogWrite(green, greenC);
 		analogWrite(blue, blueC);
 }
 
-int fade(int fromR, int fromG, int fromB, int toR, int toG, int toB) 
+void fade(int fromR, int fromG, int fromB, int toR, int toG, int toB) 
 {
 
 	rgb(fromR, fromG, fromB);
